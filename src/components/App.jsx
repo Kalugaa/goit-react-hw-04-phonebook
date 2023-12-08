@@ -3,12 +3,11 @@ import ContactsSearch from './ContactsSearch/ContactsSearch';
 import ContactList from './ContactList/ContactList';
 import Section from './Contacts/Contacts';
 import { nanoid } from 'nanoid';
-const { useState, useEffect, useRef } = require('react');
+const { useState, useEffect } = require('react');
 
 const App = () => {
   const [contacts, setContacts] = useState([]);
   const [filter, setFilter] = useState('');
-  const prevContactsRef = useRef();
 
   useEffect(() => {
     const localContacts = JSON.parse(localStorage.getItem('contacts'));
